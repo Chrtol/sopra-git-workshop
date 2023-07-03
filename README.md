@@ -45,7 +45,7 @@ First, clone this repository in VScode by pressing F1 and typing:
 Or by opening the terminal and typing
 
 ``` sh
-git clone https://github.com/Chrtol/git-workshop.git
+git clone https://github.com/Chrtol/sopra-git-workshop.git
 ```
 
 Then pasting the URL to the repository: https://github.com/equinor/git-workshop.git
