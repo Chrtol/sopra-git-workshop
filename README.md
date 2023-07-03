@@ -265,7 +265,7 @@ used to switch to the exp1 branch above)
 
 Now, where’s our `test.txt` file ?
 
-    $ ls
+    $ dir
     README.textile  alice.txt   bob.txt     gamow.txt
 
 As you can see the new file you created in the other branch has
