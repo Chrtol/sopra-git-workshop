@@ -399,75 +399,46 @@ branch.
 Part III
 ========
 
-GitHub
-------
-But, wait. There’s more. What about this distributed sharing thing with
-Git ?
+Making a change using the GitHub flow strategy
+-------
 
-To be able to share, we’ll need a server to host our git repositiories.
-GitHub (<a href="https://github.com/">github.com</a>) is probably the
-easiest place to begin with.
+The [GitHub Flow strategy](https://docs.github.com/en/get-started/quickstart/github-flow) is the most commonly used workflow for collaboratively working on code. The basic idea is to create a branch based on the main branch in a feature branch, and then push those changes into the pain branch through a pull request that is approved by a second person.
 
-Login or sign up with GitHub
-----------------------------
+In this part you will create  a new branch, add your changes, create a pull request into the repository, and approve someone else's pull request. To start, open VSCode (or your favorite IDE) and type:
 
-If you've already got an account you can skip on to creating the repo on
-github, or forking this repository and cloning it down to your local machine.
+    $ git pull
+    $ git checkout main
+    $ git checkout -b "your_initials-feature"
 
-Otherwise...
+You can also do this in VScode! In the bottom left of your screen, press the name of your currently checked out branch (where HEAD points to!) and click "Create branch from" on the menu that opens on the top of the screen. Then type in "your_initials-feature" for a branch name.
 
-Go <a href="https://github.com/signup">sign up for an account</a> at
-GitHub; Or login into your GitHub account if you had previously signed
-up.
+Next, make a change to the "outfile"-file and add a link to a funny meme, or whatever you want to add. saving, stage the change, commit it, push it to the remote (Github)
 
-Hint: You may need to setup git cache your GitHub password - see
-<a href="https://help.github.com/articles/set-up-git">https://help.github.com/articles/set-up-git</a>
+    $ git add outfile
+    $ git commit -m "Added my content to outfile"
+    $ git push
 
-Then come back here, we’ll wait.
+Or through VScode: Go to source control on the left bar (should be the third icon from the top), then press the + button on outfile, write a commit message, commit, then sync changes.
 
-Create your first GitHub repository
------------------------------------
+Creating a Pull Request
+-------
 
-A repository (repo) is a place where you would store your code. You were
-practising on your very own repo just now in Part 1!
+Now that we have pushed our changes to our branch, let's create our pull request.
 
-The following <a href="https://help.github.com/articles/create-a-repo">
-tutorial</a> will show you how to create a GitHub repo - which you can
-then share with others
+Go to the [GitHub repository](https://github.com/Chrtol/sopra-git-workshop/), press "Pull Requests", then press the "New Pull Request" button.
 
-Then come back here, we’ll wait.
+The base should be main, and the compare-branch should be the branch you created.
 
-Fork a repo
------------
+After creating your pull request, you need to wait for someone to approve it.
 
-Go to [this tutorial](https://help.github.com/articles/fork-a-repo)
-Then come back here, we’ll wait.
+If you get a merge conflict at this point, try to solve it yourself! Open VSCode back up, and type:
 
-Let’s collaborate !
--------------------
+    $ git fetch --all
+    $ git checkout "name_of_your_branch"
+    $ git merge origin/main
 
-Check out the `pull_request` branch on this repository for further instructions!
-You can always get back to this version of the readme by checking out the main branch.
+This will fetch all pending changes, checkout your branch, and then merge the missing changes from main into your own branch. You will then have to open the merge editor by going to "Source Control" on the left side again. Open the merged changes, and then resolve the merge conflict. In this case, you will want to approve both changes, resolve the merge, commit, and then push the changes to your branch again.
 
-Fin
----
-
-You have learnt:
-
-1.  Forking a repo at GitHub
-2.  Git push
-3.  Git pull
-
-### References and Further reading
-
-I throughly recommend these resources to continue your Git practice:
-
--   <a href="http://try.github.com">http://try.github.com</a> Another
-    beginners tutorial for git
--   <a href="http://git-scm.com">http://git-scm.com</a> Official
-    website, with very useful help, book and videos
--   <a href="http://gitref.org">http://gitref.org</a>
--   <a href="http://www.kernel.org/pub/software/scm/git/docs/everyday.html">http://www.kernel.org/pub/software/scm/git/docs/everyday.html</a>
 
 Author
 ------
